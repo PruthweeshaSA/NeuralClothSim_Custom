@@ -1,0 +1,6 @@
+ncs/__pycache__/
+checkpoints/
+**/__pycache__/
+ncs/ncs_env/
+logs/
+results/
