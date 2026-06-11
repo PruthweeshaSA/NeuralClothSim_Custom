@@ -87,8 +87,10 @@ def main(config):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", type=str, required=True)
-    parser.add_argument("--gpu_id", type=str, required=True)
+    parser.add_argument("--gpu_id", type=str, required=False)
     opts = parser.parse_args()
+    if not hasattr(opts, "gpu_id") or opts.gpu_id is None:
+        opts.gpu_id = "0"
 
     # Set GPU
     os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
